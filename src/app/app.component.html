@@ -1,0 +1,42 @@
+<div class="container my-2 text-center">
+  <app-hello name="{{ name }}"></app-hello>
+  <h3 class="my-3">
+    Mathematical Operations Using NgRx-Store
+  </h3>
+
+  <ng-container *ngIf="count$ | async as num">
+    <div class="mb-2">
+      <button class="btn btn-success btn-sm mr-2" (click)="increment()">
+        increment
+      </button>
+      <button class="btn btn-success btn-sm mr-2" (click)="increment_by_2()">
+        increment by 2
+      </button>
+      <button class="btn btn-success btn-sm mr-2" (click)="decrement()">
+        decrement
+      </button>
+      <button class="btn btn-success btn-sm mr-2" (click)="multiply()">
+        multiply by 2
+      </button>
+      <button class="btn btn-success btn-sm mr-2" (click)="divide()">
+        divide by 2
+      </button>
+      <button class="btn btn-primary btn-sm mr-2" (click)="storeVal(num)">
+        store
+      </button>
+    </div>
+
+    <div class="pt-4">
+      UPDATED COUNT:
+      <span class="badge badge-primary ml-2" id="num" [innerText]="num"></span>
+    </div>
+    <div class="pt-2">
+      STORAGE:
+      <span
+              class="badge badge-primary ml-2 "
+              id="storage"
+              [innerText]="storage$ | async"
+      ></span>
+    </div>
+  </ng-container>
+</div>
